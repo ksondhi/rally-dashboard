@@ -1,12 +1,12 @@
 {
   "name": "rally-dashboard",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
+    "build": "ng build --prod",
+    "test": "ng test --no-watch",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
