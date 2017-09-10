@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { AuthGuard } from './auth/auth.guard.service';
 import { AppRoutingModule } from './app.routing.module';
 import { RallyService } from './rally/rally.service';
@@ -19,7 +20,8 @@ import { SecureComponent } from './secure/secure.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [AuthService, RallyService, AuthGuard],
   bootstrap: [AppComponent]

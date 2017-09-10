@@ -7,7 +7,9 @@ export class AuthService {
   redirectUrl: string;
   isLoggedIn: boolean;
 
-  constructor() { }
+  constructor() {
+    console.log('creating the authService');
+  }
 
 
   login(): Observable<boolean> {

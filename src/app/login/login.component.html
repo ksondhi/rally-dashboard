@@ -5,10 +5,10 @@
       <div class="account-wall">
         <img class="profile-img" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120"
           alt="">
-        <form class="form-signin">
-          <input type="text" class="form-control" placeholder="Email" required autofocus>
-          <input type="password" class="form-control" placeholder="Password" required>
-          <button class="btn btn-lg btn-primary btn-block" type="submit">
+        <form class="form-signin" #loginForm="ngForm" (ngSubmit)="onSubmit()">
+          <input type="text" [ngModel]="model.emailAddress" name="emailAddress" class="form-control" placeholder="Email" required autofocus>
+          <input type="password" [ngModel]="model.password" name="password" class="form-control" placeholder="Password" required>
+          <button class="btn btn-lg btn-primary btn-block" type="submit" [disabled]="!loginForm.form.valid">
                   Sign in</button>
           <label class="checkbox pull-left">
                   <input type="checkbox" value="remember-me">

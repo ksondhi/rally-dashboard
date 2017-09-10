@@ -5,10 +5,11 @@ import { ActivatedRouteSnapshot, CanActivate, CanActivateChild, Router, RouterSt
 @Injectable()
 export class AuthGuard implements CanActivate, CanActivateChild {
 
-    constructor(private authService: AuthService, private router: Router) {}
+    constructor(private authService: AuthService, private router: Router) {
+        console.log('creating guard');
+    }
 
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-        console.log('in authguard');
         if (this.authService.isLoggedIn) {
             return true;
         }
@@ -19,6 +20,7 @@ export class AuthGuard implements CanActivate, CanActivateChild {
     }
 
     canActivateChild(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+        console.log('in authguard', this.authService.isLoggedIn);
         return this.canActivate(route, state);
     }
 }
